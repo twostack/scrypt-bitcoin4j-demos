@@ -1,0 +1,16 @@
+import "util.scrypt";
+
+contract SomeTest{
+
+    int someData;
+
+    constructor( int data){
+
+        this.someData = data;
+    }
+
+    public function something(int x){
+
+        require(this.someData == x);
+    }
+}

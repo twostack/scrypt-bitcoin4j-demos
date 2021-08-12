@@ -1,0 +1,35 @@
+{
+    "version": 4,
+    "compilerVersion": "1.1.0+commit.1690659",
+    "contract": "SomeTest",
+    "md5": "e0ce3e0572b607f2652277673a85355a",
+    "structs": [],
+    "alias": [],
+    "abi": [
+        {
+            "type": "function",
+            "name": "something",
+            "index": 0,
+            "params": [
+                {
+                    "name": "x",
+                    "type": "int"
+                }
+            ]
+        },
+        {
+            "type": "constructor",
+            "params": [
+                {
+                    "name": "data",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "buildType": "release",
+    "file": "",
+    "asm": "OP_0 $data OP_NIP OP_DUP OP_2 OP_PICK OP_NUMEQUAL OP_NIP OP_NIP",
+    "sources": [],
+    "sourceMap": []
+}

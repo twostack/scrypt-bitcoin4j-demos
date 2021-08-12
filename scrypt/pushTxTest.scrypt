@@ -1,0 +1,11 @@
+import "util.scrypt";
+
+contract PushTxTest {
+
+  public function requirePreimage(SigHashPreimage preimage){
+    require(Tx.checkPreimage(preimage));
+  }
+
+
+
+}
