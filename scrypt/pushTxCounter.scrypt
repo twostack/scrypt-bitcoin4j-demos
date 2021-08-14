@@ -1,0 +1,37 @@
+
+import "util.scrypt";
+
+type State = int;
+
+contract PushTxCounter {
+
+  public function requirePreimage(SigHashPreimage preimage){
+    require(Tx.checkPreimage(preimage));
+
+    //data at the end of our output script
+    //data has a size of 1 byte (counter)
+
+    bytes preimageOutputScript = Util.scriptCode(preimage);
+    int scriptLen = len(preimageOutputScript);
+
+    // state (i.e., counter value) is at the end
+    State counter = unpack(preimageOutputScript[scriptLen - 4:]);
+    // increment counter
+
+    //restrict bob to only allow him to increment my counter by (1)
+
+    //2) Increment the counter myself
+    //3) Reconstruct the outputscript
+    bytes newOutputScript = preimageOutputScript[ : scriptLen - 4] + num2bin(counter + 1, 4) ;
+
+
+    bytes newUTXO  = Util.buildOutput(newOutputScript, 1);
+
+    require(hash256(newUTXO) == Util.hashOutputs(preimage));
+    // require(1 == 1);
+
+  }
+
+
+
+}
