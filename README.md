@@ -15,6 +15,7 @@ To run the tests:
 ## Code Organisation
 ```sh
 ├── scrypt
+│   ├── pushTxCounter.scrypt
 │   ├── pushTxTest.scrypt
 │   └── sometest.scrypt
 └── src
@@ -35,6 +36,8 @@ To run the tests:
         │               └── ScryptContractTest.kt
         └── resources
             └── contracts
+                ├── pushTxCounter_release_desc.json
                 ├── pushTxTest_release_desc.json
                 └── sometest_release_desc.json
+                
 ```
